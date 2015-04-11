@@ -1,6 +1,10 @@
 # Ubuntu Kernel - Surface Pro 3
 This is a work in progress and will be obsolete at some point when all changes make it upstream.
 
+<rant>
+I do not dual boot.  I used to about 15 years ago back in 2000ish but found I always booted into one OS or the other and rarely if ever booted into both on the same day.  So, I no longer dual boot.  I am currently running Ubuntu Gnome 15.04 nightly CD and erased everything on the disk and performed a fresh installation.  With VMware, VirtualBox, KVM, etc, I find no reason to dual boot any longer, just run your Windows/OSX apps in a VM.
+</rant>
+
 Most of this work is not my own, rather it is a collection of patches and instructions to simplify running Linux on Surface Pro 3.
 
 A [Google Group](https://groups.google.com/forum/?hl=en#!forum/linux-surface) has also been created by another enthusiast to use as a discussion board for issues/successes when using Linux on SP3.  This group, specifically the first post, is where I received much of this information, along with kernel bug [84651](https://bugzilla.kernel.org/show_bug.cgi?id=84651)
@@ -48,6 +52,32 @@ Install using:
 ```
 cd .. && dpkg -i linux-headers* linux-image*
 sudo grub-install
+
+## Fix the Type Cover Trackpad
+
+Add the following at the end of /usr/share/X11/xorg.conf.d/10-evdev.conf
+```
+Section "InputClass"
+    Identifier "Surface Pro 3 cover"
+    MatchIsPointer "on"
+    MatchDevicePath "/dev/input/event*"
+    Driver "evdev"
+    Option "vendor" "045e"
+    Option "product" "07dc"
+    Option "IgnoreAbsoluteAxes" "True"
+EndSection
+```
+
+## Recover from grub prompt or UEFI loop
+If you find yourself in a loop where the SP3 continues to enter UEFI, do not fret, simply insert your ubuntu 15.04 install USB.
+
+If your system will not boot beyond grub, no worries, do this at the grub prompt:
+```
+"press 'c' to enter command line"
+grub> set root=(hd1,2)
+grub> linux /vmlinuz root=/dev/sda2
+grub> initrd /initrd.img
+grub> boot
 ```
 
 Enjoy!
