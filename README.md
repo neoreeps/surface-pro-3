@@ -15,11 +15,11 @@ Most of this work is not my own, rather it is a collection of patches and instru
 ## Get the kernel
 From [Ubuntu Kernel Git Guide](https://wiki.ubuntu.com/Kernel/Dev/KernelGitGuide?action=show&redirect=KernelTeam%2FKernelGitGuide)
 
-'''
+```
 sudo apt-get install git
 mkdir ~/source && cd ~/source
 git clone git://kernel.ubuntu.com/ubuntu/ubuntu-vivid.git
-'''
+```
 
 ## Apply the patches and Build
 Copy or download the above patches and apply each of them with:
@@ -33,7 +33,7 @@ Build your new kernel with:
     DEB_BUILD_OPTIONS=parallel=4 AUTOBUILD=1 NOEXTRAS=1 fakeroot debian/rules binary-generic
 
 ## Install the kernel
-* I have found that sometimes after touching grub, the first boot may take a few minutes.  DO NOT STOP IT, let the system boot.  Afterwards, should be fast again. *
+**I have found that sometimes after touching grub, the first boot may take a few minutes.  DO NOT STOP IT, let the system boot.  Afterwards, should be fast again.**
 Also, always remember to run grub-install after anything touches/updates grub.
 
 Install using:
