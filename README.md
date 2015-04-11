@@ -23,21 +23,25 @@ git clone git://kernel.ubuntu.com/ubuntu/ubuntu-vivid.git
 
 ## Apply the patches and Build
 Copy or download the above patches and apply each of them with:
-    patch -p1 --ignore-whitespace -i {patch}
+```patch -p1 --ignore-whitespace -i {patch}```
 
 Before building the kernel, I update the version number to avoid software update from constantly overwriting (or attempting to) my kernel.  Simply edit ubuntu-vivid/debian.master/changelog and increment the version number by 1.
-    example: 3.19.0-13.13 -> 3.19.0-13.14
+```example: 3.19.0-13.13 -> 3.19.0-13.14```
 
 Build your new kernel with:
-    fakeroot debian/rules clean
-    DEB_BUILD_OPTIONS=parallel=4 AUTOBUILD=1 NOEXTRAS=1 fakeroot debian/rules binary-generic
+```
+fakeroot debian/rules clean
+DEB_BUILD_OPTIONS=parallel=4 AUTOBUILD=1 NOEXTRAS=1 fakeroot debian/rules binary-generic
+```
 
 ## Install the kernel
 **I have found that sometimes after touching grub, the first boot may take a few minutes.  DO NOT STOP IT, let the system boot.  Afterwards, should be fast again.**
 Also, always remember to run grub-install after anything touches/updates grub.
 
 Install using:
-    cd .. && dpkg -i linux-headers* linux-image*
-    sudo grub-install
+```
+cd .. && dpkg -i linux-headers* linux-image*
+sudo grub-install
+```
 
 Enjoy!
