@@ -51,3 +51,8 @@ sudo grub-install
 ```
 
 Enjoy!
+
+My current kernel:
+```
+Linux reeps-sp3 3.19.0-13-generic #14 SMP Fri Apr 10 14:37:38 PDT 2015 x86_64 x86_64 x86_64 GNU/Linux
+```
