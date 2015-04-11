@@ -19,6 +19,9 @@ A [Google Group](https://groups.google.com/forum/?hl=en#!forum/linux-surface) ha
 * suspend - it's flaky and resumes quickly
 * trackpad - it's registered as a mouse but is usable IMHO
 
+## Binary pre-built debs
+As I build new kernels, I'll place them in [Google Drive](https://drive.google.com/folderview?id=0BzNI3Zdy9Y6kfklBazc5Y3VQXzd6MU1oaUFMS0NxWEI4dmpFRmFITWZFZWpfM0U1dUJJaTQ&usp=sharing)
+
 ## Get the kernel
 From [Ubuntu Kernel Git Guide](https://wiki.ubuntu.com/Kernel/Dev/KernelGitGuide?action=show&redirect=KernelTeam%2FKernelGitGuide)
 
