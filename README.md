@@ -3,9 +3,8 @@ This is a work in progress and will be obsolete at some point when all changes m
 
 I have not disabled TPM or SecureBoot.  I have both enabled and have them enabled during install, reboot, etc.  No need any longer to disable them, if using Ubuntu 15.04 which has support for secure boot and key management.
 
-!Disclaimer!
+!!!Disclaimer!!!
 I do not dual boot.  I used to about 15 years ago back in 2000ish but found I always booted into one OS or the other and rarely if ever booted into both on the same day.  So, I no longer dual boot.  I am currently running Ubuntu Gnome 15.04 nightly CD and erased everything on the disk and performed a fresh installation.  With VMware, VirtualBox, KVM, etc, I find no reason to dual boot any longer, just run your Windows/OSX apps in a VM.  Thus, I cannot help with dual boot issues.
-!Disclaimer!
 
 Most of this work is not my own, rather it is a collection of patches and instructions to simplify running Linux on Surface Pro 3.
 
@@ -54,6 +53,7 @@ Install using:
 ```
 cd .. && dpkg -i linux-headers* linux-image*
 sudo grub-install
+```
 
 ## Fix the Type Cover Trackpad
 
