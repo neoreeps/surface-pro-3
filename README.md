@@ -1,4 +1,4 @@
-# Ubuntu Kernel - Surface Pro 3
+# Ubuntu (15.04) Kernel - Surface Pro 3
 This is a work in progress and will be obsolete at some point when all changes make it upstream.
 
 I have not disabled TPM or SecureBoot.  I have both enabled and have them enabled during install, reboot, etc.  No need any longer to disable them, if using Ubuntu 15.04 which has support for secure boot and key management.
@@ -89,5 +89,5 @@ Enjoy!
 
 My current kernel:
 ```
-Linux reeps-sp3 3.19.0-13-generic #14 SMP Fri Apr 10 14:37:38 PDT 2015 x86_64 x86_64 x86_64 GNU/Linux
+Linux reeps-sp3 3.19.0-14-generic #15 SMP Wed Apr 15 09:41:49 PDT 2015 x86_64 x86_64 x86_64 GNU/Linux
 ```
