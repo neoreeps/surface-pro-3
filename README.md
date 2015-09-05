@@ -1,3 +1,16 @@
+# Ubuntu (15.10)
+I have just installed Ubuntu Gnome 15.10 Beta and have mixed results.
+
+The kernel is 4.2.0-7 Ubuntu.  It seems to work well with only the following issues:
+* Touchpad didn't work (resolved by adding the device section at the end of the evdev.conf file)
+* Buttons don't work (no hotkeys or sound buttons)
+* Touchpad two-finger anything does not work but otherwise it's functional after change above
+* It's Beta so it's bound to be broken but damn it is working better than I thought it would
+
+Here is the good news:
+* Wifi is rock solid
+* Power management works, what?  Yes, suspend works.
+
 # Ubuntu (15.04) Kernel - Surface Pro 3
 This is a work in progress and will be obsolete at some point when all changes make it upstream.
 
