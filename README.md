@@ -4,22 +4,9 @@ This is a work in progress and will be obsolete at some point when all changes m
 I have not disabled TPM or SecureBoot.  I have both enabled and have them enabled during install, reboot, etc.  No need any longer to disable them, if using Ubuntu 15.04 which has support for secure boot and key management.
 
 !!!Disclaimer!!!
-I do not dual boot.  I used to about 15 years ago back in 2000ish but found I always booted into one OS or the other and rarely if ever booted into both on the same day.  So, I no longer dual boot.  I am currently running Ubuntu Gnome 15.04 nightly CD and erased everything on the disk and performed a fresh installation.  With VMware, VirtualBox, KVM, etc, I find no reason to dual boot any longer, just run your Windows/OSX apps in a VM.  Thus, I cannot help with dual boot issues.
+I do not dual boot.  I used to about 15 years ago back in 2000ish but found I always booted into one OS or the other and rarely if ever booted into both on the same day.  So, I no longer dual boot.  I am currently running Ubuntu Gnome 15.04 CD and erased everything on the disk and performed a fresh installation.  With VMware, VirtualBox, KVM, etc, I find no reason to dual boot any longer, just run your Windows/OSX apps in a VM.  Thus, I cannot help with dual boot issues.
 
 Most of this work is not my own, rather it is a collection of patches and instructions to simplify running Linux on Surface Pro 3.
-
-# Ubuntu (15.10) Kernel
-I have just installed Ubuntu Gnome 15.10 Beta and have mixed results.
-
-The kernel is 4.2.0-7 Ubuntu.  It seems to work well with only the following issues:
-* Touchpad didn't work (resolved by adding the device section at the end of the evdev.conf file)
-* Buttons don't work (no hotkeys or sound buttons)
-* Touchpad two-finger anything does not work but otherwise it's functional after change above
-* It's Beta so it's bound to be broken but damn it is working better than I thought it would
-
-Here is the good news:
-* Wifi is rock solid
-* Power management works, what?  Yes, suspend works.
 
 # Ubuntu (15.04) Kernel
 A [Google Group](https://groups.google.com/forum/?hl=en#!forum/linux-surface) has also been created by another enthusiast to use as a discussion board for issues/successes when using Linux on SP3.  This group, specifically the first post, is where I received much of this information, along with kernel bug [84651](https://bugzilla.kernel.org/show_bug.cgi?id=84651)
@@ -103,5 +90,5 @@ Enjoy!
 
 My current kernel:
 ```
-Linux reeps-sp3 3.19.0-14-generic #15 SMP Wed Apr 15 09:41:49 PDT 2015 x86_64 x86_64 x86_64 GNU/Linux
+Linux REEPS-SP3 3.19.0-30-generic #34 SMP Tue Sep 22 10:53:43 PDT 2015 x86_64 x86_64 x86_64 GNU/Linux
 ```
