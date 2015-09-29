@@ -17,9 +17,12 @@ As I build new kernels, I'll place them in [Google Drive](https://drive.google.c
 
 I gave Ubuntu 15.10 a shot but it was very unstable.  I did find that many of the SP3 features were enabled with no patches.  In fact, the only thing missing was the camera and buttons.  I've included a patch 'wily_sp3.patch' to add these features to the wily kernel for use with vivid.
 
-- So far everything works, except the trackpad.
+- So far everything works, except the trackpad multi-touch
 - WiFi is rock solid
 - Suspend works! (so far but only minimal tests so far)
+
+### UPDATE - 150928
+Built new kernel and updated patch for additional type keyboards.  Hopefully this will work for everyone.
 
 ### What doesn't work
 * trackpad - still registered as a mouse so no two-fingered anything, but it works
