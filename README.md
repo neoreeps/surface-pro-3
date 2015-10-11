@@ -11,6 +11,11 @@ Most of this work is not my own, rather it is a collection of patches and instru
 ## Binary pre-built debs
 As I build new kernels, I'll place them in [Google Drive](https://drive.google.com/folderview?id=0BzNI3Zdy9Y6kfklBazc5Y3VQXzd6MU1oaUFMS0NxWEI4dmpFRmFITWZFZWpfM0U1dUJJaTQ&usp=sharing)
 
+# Ubuntu (15.10)
+I have just switched to Ubuntu 15.10, and everything seems to be working well.  I am still using the 4.2 kernel below with the wily patch.
+
+Same issue with touchpad being a pointer and not a touchpad.  Suspend still wonky but works well enough for me.
+
 # Ubuntu (15.04)
 
 ## 4.2.0 Kernel
