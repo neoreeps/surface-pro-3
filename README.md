@@ -20,16 +20,22 @@ Same issue with touchpad being a pointer and not a touchpad.  Suspend still wonk
 
 ## 4.2.0 Kernel
 
-I gave Ubuntu 15.10 a shot but it was very unstable.  I did find that many of the SP3 features were enabled with no patches.  In fact, the only thing missing was the camera and buttons.  I've included a patch 'wily_sp3.patch' to add these features to the wily kernel for use with vivid.
+I found that many of the SP3 features were enabled with no patches.  In fact, the only thing missing was the camera and buttons.  I've included a patch 'wily_sp3_mt.patch' to add these features to the wily kernel for use with vivid which also enables the touchpad as a touchpad instead of pointer.
 
-- So far everything works, except the trackpad multi-touch and PM :(
+- So far everything works, except power management 
 - WiFi is rock solid
+- Added new patch which enables touchpad!
+
+### UPDATE - 151012
+Created a new SP3 patch which enables the touchpad ... 
+
+MULTITOUCH WORKS!!!
+
 
 ### UPDATE - 150928
 Built new kernel and updated patch for additional type keyboards.  Hopefully this will work for everyone.
 
 ### What doesn't work
-* trackpad - still registered as a mouse so no two-fingered anything, but it works
 * power management - suspend still b0rk ... it's inconsistent for me ...
 
 ## 3.19 Kernel
