@@ -12,9 +12,7 @@ Most of this work is not my own, rather it is a collection of patches and instru
 As I build new kernels, I'll place them in [Google Drive](https://drive.google.com/folderview?id=0BzNI3Zdy9Y6kfklBazc5Y3VQXzd6MU1oaUFMS0NxWEI4dmpFRmFITWZFZWpfM0U1dUJJaTQ&usp=sharing)
 
 # Ubuntu (15.10)
-I have just switched to Ubuntu 15.10, and everything seems to be working well.  I am still using the 4.2 kernel below with the wily patch.
-
-Same issue with touchpad being a pointer and not a touchpad.  Suspend still wonky but works well enough for me.
+I have just switched to Ubuntu 15.10, and everything seems to be working well.  I am still using the 4.2 kernel below with the updated wily patch which gives us multi-touch support.
 
 # Ubuntu (15.04)
 
@@ -50,6 +48,8 @@ A [Google Group](https://groups.google.com/forum/?hl=en#!forum/linux-surface) ha
 ### What doesn't work
 * suspend - it's flaky and resumes quickly
 * trackpad - it's registered as a mouse but is usable IMHO
+
+# Build it from scratch
 
 ## Get the kernel
 From [Ubuntu Kernel Git Guide](https://wiki.ubuntu.com/Kernel/Dev/KernelGitGuide?action=show&redirect=KernelTeam%2FKernelGitGuide)
