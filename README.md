@@ -100,7 +100,6 @@ Section "InputClass"
     MatchDevicePath "/dev/input/event*"
     Driver "evdev"
     Option "vendor" "045e"
-    Option "product" "07dc"
     Option "IgnoreAbsoluteAxes" "True"
 EndSection
 ```
