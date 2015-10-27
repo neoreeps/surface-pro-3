@@ -9,8 +9,7 @@ I do not dual boot.  I used to about 15 years ago back in 2000ish but found I al
 Most of this work is not my own, rather it is a collection of patches and instructions to simplify running Linux on Surface Pro 3.
 
 ## Binary pre-built debs
-As I build new kernels, I'll place them in [Google Drive](https://drive.google.com/folderview?id=0BzNI3Zdy9Y6kfklBazc5Y3VQXzd6MU1oaUFMS0NxWEI4dmpFRmFITWZFZWpfM0U1dUJJaTQ&usp=sharing)
-
+As I build new kernels, I'll place them in [Google Drive](https://drive.google.com/open?id=0BzNI3Zdy9Y6kfklBazc5Y3VQXzd6MU1oaUFMS0NxWEI4dmpFRmFITWZFZWpfM0U1dUJJaTQ)
 # Ubuntu (15.10)
 I have just switched to Ubuntu 15.10, and everything seems to be working well.  I am still using the 4.2 kernel below with the updated wily patch which gives us multi-touch support.
 
