@@ -1,28 +1,46 @@
-commit 707d54d600d468907a6e1facd085672805749a4e
+commit dd2e89bf4b10e3e281afb928ebf630a35c96a025
 Author: Kenny Speer <kenny.speer@gmail.com>
-Date:   Mon Sep 28 13:58:21 2015 -0700
+Date:   Sun Oct 18 20:36:04 2015 -0700
 
-    add sp3 support
+    update version
 
+diff --git a/debian.master/changelog b/debian.master/changelog
+index 76b4c08..4ede5c7 100644
+--- a/debian.master/changelog
++++ b/debian.master/changelog
+@@ -1,3 +1,11 @@
++linux (4.2.0-16.20) wily; urgency=low
++
++  [ Kenny Speer ]
++
++  * Add Surface Pro 3 Support
++
++ -- Kenny Speer <kenny.speer@gmail.com>  Sun, 18 Oct 2015 20:39:44 -0700
++
+ linux (4.2.0-16.19) wily; urgency=low
+ 
+   [ Tim Gardner ]
 diff --git a/drivers/hid/hid-core.c b/drivers/hid/hid-core.c
-index e6fce23..fe5f2e5 100644
+index e6fce23..73c0bb7 100644
 --- a/drivers/hid/hid-core.c
 +++ b/drivers/hid/hid-core.c
-@@ -707,6 +707,8 @@ static void hid_scan_collection(struct hid_parser *parser, unsigned type)
+@@ -705,9 +705,7 @@ static void hid_scan_collection(struct hid_parser *parser, unsigned type)
+ 		hid->group = HID_GROUP_SENSOR_HUB;
+ 
  	if (hid->vendor == USB_VENDOR_ID_MICROSOFT &&
- 	    (hid->product == USB_DEVICE_ID_MS_TYPE_COVER_3 ||
- 	     hid->product == USB_DEVICE_ID_MS_TYPE_COVER_3_JP ||
-+		 hid->product == USB_DEVICE_ID_MS_TYPE_COVER_3_1 ||
-+		 hid->product == USB_DEVICE_ID_MS_TYPE_COVER_3_2 ||
- 	     hid->product == USB_DEVICE_ID_MS_POWER_COVER) &&
+-	    (hid->product == USB_DEVICE_ID_MS_TYPE_COVER_3 ||
+-	     hid->product == USB_DEVICE_ID_MS_TYPE_COVER_3_JP ||
+-	     hid->product == USB_DEVICE_ID_MS_POWER_COVER) &&
++	    hid->product == USB_DEVICE_ID_MS_POWER_COVER &&
  	    hid->group == HID_GROUP_MULTITOUCH)
  		hid->group = HID_GROUP_GENERIC;
-@@ -1907,6 +1909,8 @@ static const struct hid_device_id hid_have_special_driver[] = {
+ 
+@@ -1905,8 +1903,6 @@ static const struct hid_device_id hid_have_special_driver[] = {
+ 	{ HID_USB_DEVICE(USB_VENDOR_ID_MICROSOFT, USB_DEVICE_ID_MS_DIGITAL_MEDIA_3K) },
+ 	{ HID_USB_DEVICE(USB_VENDOR_ID_MICROSOFT, USB_DEVICE_ID_WIRELESS_OPTICAL_DESKTOP_3_0) },
  	{ HID_USB_DEVICE(USB_VENDOR_ID_MICROSOFT, USB_DEVICE_ID_MS_OFFICE_KB) },
- 	{ HID_USB_DEVICE(USB_VENDOR_ID_MICROSOFT, USB_DEVICE_ID_MS_TYPE_COVER_3) },
- 	{ HID_USB_DEVICE(USB_VENDOR_ID_MICROSOFT, USB_DEVICE_ID_MS_TYPE_COVER_3_JP) },
-+	{ HID_USB_DEVICE(USB_VENDOR_ID_MICROSOFT, USB_DEVICE_ID_MS_TYPE_COVER_3_1) },
-+	{ HID_USB_DEVICE(USB_VENDOR_ID_MICROSOFT, USB_DEVICE_ID_MS_TYPE_COVER_3_2) },
+-	{ HID_USB_DEVICE(USB_VENDOR_ID_MICROSOFT, USB_DEVICE_ID_MS_TYPE_COVER_3) },
+-	{ HID_USB_DEVICE(USB_VENDOR_ID_MICROSOFT, USB_DEVICE_ID_MS_TYPE_COVER_3_JP) },
  	{ HID_USB_DEVICE(USB_VENDOR_ID_MICROSOFT, USB_DEVICE_ID_MS_POWER_COVER) },
  	{ HID_USB_DEVICE(USB_VENDOR_ID_MONTEREY, USB_DEVICE_ID_GENIUS_KB29E) },
  	{ HID_USB_DEVICE(USB_VENDOR_ID_MSI, USB_DEVICE_ID_MSI_GT683R_LED_PANEL) },
@@ -40,17 +58,17 @@ index b3b225b..5ca788d 100644
  
  #define USB_VENDOR_ID_MOJO		0x8282
 diff --git a/drivers/hid/hid-microsoft.c b/drivers/hid/hid-microsoft.c
-index 32a596f..d236ff4 100644
+index 32a596f..3110927 100644
 --- a/drivers/hid/hid-microsoft.c
 +++ b/drivers/hid/hid-microsoft.c
-@@ -280,6 +280,10 @@ static const struct hid_device_id ms_devices[] = {
- 		.driver_data = MS_HIDINPUT },
- 	{ HID_USB_DEVICE(USB_VENDOR_ID_MICROSOFT, USB_DEVICE_ID_MS_TYPE_COVER_3_JP),
- 		.driver_data = MS_HIDINPUT },
-+	{ HID_USB_DEVICE(USB_VENDOR_ID_MICROSOFT, USB_DEVICE_ID_MS_TYPE_COVER_3_1),
-+		.driver_data = MS_HIDINPUT },
-+	{ HID_USB_DEVICE(USB_VENDOR_ID_MICROSOFT, USB_DEVICE_ID_MS_TYPE_COVER_3_2),
-+		.driver_data = MS_HIDINPUT },
+@@ -276,10 +276,6 @@ static const struct hid_device_id ms_devices[] = {
+ 		.driver_data = MS_NOGET },
+ 	{ HID_USB_DEVICE(USB_VENDOR_ID_MICROSOFT, USB_DEVICE_ID_MS_COMFORT_MOUSE_4500),
+ 		.driver_data = MS_DUPLICATE_USAGES },
+-	{ HID_USB_DEVICE(USB_VENDOR_ID_MICROSOFT, USB_DEVICE_ID_MS_TYPE_COVER_3),
+-		.driver_data = MS_HIDINPUT },
+-	{ HID_USB_DEVICE(USB_VENDOR_ID_MICROSOFT, USB_DEVICE_ID_MS_TYPE_COVER_3_JP),
+-		.driver_data = MS_HIDINPUT },
  	{ HID_USB_DEVICE(USB_VENDOR_ID_MICROSOFT, USB_DEVICE_ID_MS_POWER_COVER),
  		.driver_data = MS_HIDINPUT },
  
