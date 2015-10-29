@@ -68,7 +68,7 @@ patch -p1 --ignore-whitespace -i wily_surface.patch
 
 For the 3.19 kernels apply all 4 patches, for the 4.2.0 kernel just apply the wily_sp3.path file.
 
-Before building the kernel, I update the version number to avoid software update from constantly overwriting (or attempting to) my kernel.  Simply edit ubuntu-vivid/debian.master/changelog and increment the version number by 1.
+Before building the kernel, I update the version number to avoid software update from constantly overwriting (or attempting to) my kernel.  Simply edit debian.master/changelog and increment the version number by 1.
 ```
 example: 4.2.0-11.13 -> 4.2.0-11.14
 ```
