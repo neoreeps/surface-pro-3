@@ -28,7 +28,6 @@ Created a new SP3 patch which enables the touchpad ...
 
 MULTITOUCH WORKS!!!
 
-
 ### UPDATE - 150928
 Built new kernel and updated patch for additional type keyboards.  Hopefully this will work for everyone.
 
@@ -62,9 +61,9 @@ git clone git://kernel.ubuntu.com/ubuntu/ubuntu-wily.git
 ```
 
 ### Apply the patches and Build
-Copy or download the above patches and apply each of them with:
+Copy or download the above patch and apply with:
 ```
-patch -p1 --ignore-whitespace -i {patch}
+patch -p1 --ignore-whitespace -i wily_surface.patch
 ```
 
 For the 3.19 kernels apply all 4 patches, for the 4.2.0 kernel just apply the wily_sp3.path file.
