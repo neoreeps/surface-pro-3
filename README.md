@@ -17,25 +17,21 @@ I have just switched to Ubuntu 15.10, and everything seems to be working well.  
 
 ## 4.2.0 Kernel
 
-I found that many of the SP3 features were enabled with no patches.  In fact, the only thing missing was the camera and buttons.  I've included a patch 'wily_sp3_mt.patch' to add these features to the wily kernel for use with vivid which also enables the touchpad as a touchpad instead of pointer.
+I found that many of the SP3 features were enabled with no patches.  In fact, the only thing missing was the camera and buttons.  I've included a patch 'wily_surface.patch' to add these features to the wily kernel for use with vivid and wily which also enables the touchpad as a touchpad instead of pointer on multiple devices.
 
 - So far everything works, except power management 
 - WiFi is rock solid
 - Added new patch which enables touchpad!
+- Patch has added support for SP4 typecover and Surface Book
+  - Camera PIDs added and keyboard PIDs
 
-### UPDATE - 151012
-Created a new SP3 patch which enables the touchpad ... 
-
-MULTITOUCH WORKS!!!
-
-
-### UPDATE - 150928
-Built new kernel and updated patch for additional type keyboards.  Hopefully this will work for everyone.
+NOTE: I don't have an SP4 or Surface Book so I don't know what's functional
 
 ### What doesn't work
 * power management - suspend still b0rk ... it's inconsistent for me ...
 
-## 3.19 Kernel
+
+## 3.19 Kernel (Don't use this ... it's here for historical reasons)
 
 A [Google Group](https://groups.google.com/forum/?hl=en#!forum/linux-surface) has also been created by another enthusiast to use as a discussion board for issues/successes when using Linux on SP3.  This group, specifically the first post, is where I received much of this information, along with kernel bug [84651](https://bugzilla.kernel.org/show_bug.cgi?id=84651)
 
@@ -120,5 +116,5 @@ Enjoy!
 
 My current kernel:
 ```
-Linux REEPS-SP3 4.2.0-17-generic #22 SMP Wed Oct 28 14:07:21 PDT 2015 x86_64 x86_64 x86_64 GNU/Linux
+Linux REEPS-SP3 4.2.0-17-generic #21 SMP Thu Oct 29 13:21:23 PDT 2015 x86_64 x86_64 x86_64 GNU/Linux
 ```
