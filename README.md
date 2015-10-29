@@ -10,10 +10,9 @@ Most of this work is not my own, rather it is a collection of patches and instru
 
 ## Binary pre-built debs
 As I build new kernels, I'll place them in [Google Drive](https://drive.google.com/open?id=0BzNI3Zdy9Y6kfklBazc5Y3VQXzd6MU1oaUFMS0NxWEI4dmpFRmFITWZFZWpfM0U1dUJJaTQ)
-# Ubuntu (15.10)
-I have just switched to Ubuntu 15.10, and everything seems to be working well.  I am still using the 4.2 kernel below with the updated wily patch which gives us multi-touch support.
 
-# Ubuntu (15.04)
+# Ubuntu (15.10) - Kernel can be used on 15.04 also
+I have just switched to Ubuntu 15.10, and everything seems to be working well.  I am still using the 4.2 kernel below with the updated wily patch which gives us multi-touch support.
 
 ## 4.2.0 Kernel
 
@@ -30,20 +29,6 @@ NOTE: I don't have an SP4 or Surface Book so I don't know what's functional
 ### What doesn't work
 * power management - suspend still b0rk ... it's inconsistent for me ...
 
-
-## 3.19 Kernel (Don't use this ... it's here for historical reasons)
-
-A [Google Group](https://groups.google.com/forum/?hl=en#!forum/linux-surface) has also been created by another enthusiast to use as a discussion board for issues/successes when using Linux on SP3.  This group, specifically the first post, is where I received much of this information, along with kernel bug [84651](https://bugzilla.kernel.org/show_bug.cgi?id=84651)
-
-- battery.patch - patch to allow the battery to be enumerated and displays accurate capacity
-- cam.patch - camera patch
-- buttons1.patch - adds support for power, home, volume buttons
-- buttons2.patch - helps with sleep fix
-
-### What doesn't work
-* suspend - it's flaky and resumes quickly
-* trackpad - it's registered as a mouse but is usable IMHO
-
 # Build it from scratch
 
 ## Get the kernel
@@ -58,14 +43,14 @@ git clone git://kernel.ubuntu.com/ubuntu/ubuntu-wily.git
 ```
 
 ### Apply the patches and Build
-Copy or download the above patches and apply each of them with:
+Copy or download the above patch and apply with:
 ```
-patch -p1 --ignore-whitespace -i {patch}
+patch -p1 --ignore-whitespace -i wily_surface.patch
 ```
 
-For the 3.19 kernels apply all 4 patches, for the 4.2.0 kernel just apply the wily_sp3.path file.
+For the 3.19 kernels apply all 4 patches from the archive folder, for the 4.2.0 kernel just apply the wily_surface.patch file.
 
-Before building the kernel, I update the version number to avoid software update from constantly overwriting (or attempting to) my kernel.  Simply edit ubuntu-vivid/debian.master/changelog and increment the version number by 1.
+Before building the kernel, I update the version number to avoid software update from constantly overwriting (or attempting to) my kernel.  Simply edit debian.master/changelog and increment the version number by 1.
 ```
 example: 4.2.0-11.13 -> 4.2.0-11.14
 ```
@@ -84,20 +69,6 @@ Install using:
 ```
 cd .. && dpkg -i linux-headers* linux-image*
 sudo grub-install
-```
-
-## Fix the Type Cover Trackpad
-
-Add the following at the end of /usr/share/X11/xorg.conf.d/10-evdev.conf
-```
-Section "InputClass"
-    Identifier "Surface Pro 3 cover"
-    MatchIsPointer "on"
-    MatchDevicePath "/dev/input/event*"
-    Driver "evdev"
-    Option "vendor" "045e"
-    Option "IgnoreAbsoluteAxes" "True"
-EndSection
 ```
 
 ## Recover from grub prompt or UEFI loop
