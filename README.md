@@ -15,7 +15,7 @@ As I build new kernels, I'll place them in [Google Drive](https://drive.google.c
 I have just switched to Ubuntu 15.10, and everything seems to be working well.  I am still using the 4.2 kernel below with the updated wily patch which gives us multi-touch support.
 
 ## 4.3.0 RC7
-TBD
+Everything seems to be working well. No complaints so far. 
 
 ## 4.2.0 Kernel
 
