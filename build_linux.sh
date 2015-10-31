@@ -12,6 +12,12 @@ patch -p1 --ignore-whitespace -i ../0003-configs-based-on-Ubuntu-4.3.0-1.5.patch
 patch -p1 --ignore-whitespace -i ../0004-surface-cam.patch
 patch -p1 --ignore-whitespace -i ../0005-surface-touchpad.patch
 
+# make config file based off of running config
 yes '' | make oldconfig
+
+# update the .config for surface button in case this is the first time build
+sed -i 's/# CONFIG_SURFACE_PRO3_BUTTON is not set/CONFIG_SURFACE_PRO3_BUTTON=m/g' .config
+
+# build it
 make clean
 make -j `getconf _NPROCESSORS_ONLN` deb-pkg LOCALVERSION=-reeps
