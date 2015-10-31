@@ -57,6 +57,7 @@ patch -p1 --ignore-whitespace -i name.patch
 After applying all 5 patches, make the config and build:
 ```
 yes '' | make oldconfig
+sed -i 's/# CONFIG_SURFACE_PRO3_BUTTON is not set/CONFIG_SURFACE_PRO3_BUTTON=m/g' .config
 make clean
 make -j `getconf _NPROCESSORS_ONLN` deb-pkg LOCALVERSION=-reeps
 ```
