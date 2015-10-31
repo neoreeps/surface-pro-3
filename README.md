@@ -14,6 +14,9 @@ As I build new kernels, I'll place them in [Google Drive](https://drive.google.c
 # Ubuntu (15.10) - Kernel can be used on 15.04 also
 I have just switched to Ubuntu 15.10, and everything seems to be working well.  I am still using the 4.2 kernel below with the updated wily patch which gives us multi-touch support.
 
+## 4.3.0 RC7
+TBD
+
 ## 4.2.0 Kernel
 
 I found that many of the SP3 features were enabled with no patches.  In fact, the only thing missing was the camera and buttons.  I've included a patch 'wily_surface.patch' to add these features to the wily kernel for use with vivid and wily which also enables the touchpad as a touchpad instead of pointer on multiple devices.
@@ -31,7 +34,29 @@ NOTE: I don't have an SP4 or Surface Book so I don't know what's functional
 
 # Build it from scratch
 
-## Get the kernel
+## Get the kernel (mainline)
+From [Ubuntu GitKernelBuild](https://wiki.ubuntu.com/KernelTeam/GitKernelBuild)
+
+Get the latest source from Linus git tree:
+```
+git clone git://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git
+```
+
+Apply the patches above which came from [Ubuntu Kernel-PPA](http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.3-rc7-unstable/)
+These patches will bring the kernel inline with ubuntu tree.  I found that pulling from kernel.org is 100x faster than the ubuntu git repos.
+
+```
+patch -p1 --ignore-whitespace -i name.patch
+```
+
+After applying all 5 patches, make the config and build:
+```
+yes '' | make oldconfig
+make clean
+make -j `getconf _NPROCESSORS_ONLN` deb-pkg LOCALVERSION=-reeps
+```
+
+## Get the kernel (ubuntu)
 From [Ubuntu Kernel Git Guide](https://wiki.ubuntu.com/Kernel/Dev/KernelGitGuide?action=show&redirect=KernelTeam%2FKernelGitGuide)
 
 ```
