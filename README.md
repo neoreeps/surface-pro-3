@@ -34,6 +34,11 @@ NOTE: I don't have an SP4 or Surface Book so I don't know what's functional
 
 # Build it from scratch
 
+Install all the deps:
+```
+sudo apt-get install git build-essential kernel-package fakeroot libncurses5-dev libssl-dev ccache
+```
+
 ## Get the kernel (mainline)
 From [Ubuntu GitKernelBuild](https://wiki.ubuntu.com/KernelTeam/GitKernelBuild)
 
