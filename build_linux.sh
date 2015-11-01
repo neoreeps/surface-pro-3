@@ -6,12 +6,9 @@ mv linux linux.old
 git clone git://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git
 
 cd linux
-patch -p1 --ignore-whitespace -i ../0001-base-packaging.patch
-patch -p1 --ignore-whitespace -i ../0002-debian-changelog.patch
-patch -p1 --ignore-whitespace -i ../0003-configs-based-on-Ubuntu-4.3.0-1.5.patch
-patch -p1 --ignore-whitespace -i ../0004-surface-cam.patch
-patch -p1 --ignore-whitespace -i ../0005-surface-touchpad.patch
-patch -p1 --ignore-whitespace -i ../0006-surface-i915.patch
+for i in $( ls ../patches ); do
+	patch -p1 --ignore-whitespace -i ../patches/$i
+done
 
 # make config file based off of running config
 yes '' | make oldconfig
