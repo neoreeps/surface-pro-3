@@ -50,6 +50,8 @@ git clone git://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git
 Apply the patches above which came from [Ubuntu Kernel-PPA](http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.3-rc7-unstable/)
 These patches will bring the kernel inline with ubuntu tree.  I found that pulling from kernel.org is 100x faster than the ubuntu git repos.
 
+NOTE: i915 patch from http://lists.freedesktop.org/archives/intel-gfx/2015-October/078622.html
+
 ```
 patch -p1 --ignore-whitespace -i name.patch
 ```
