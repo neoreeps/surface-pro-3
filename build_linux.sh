@@ -21,6 +21,7 @@ make clean
 make -j `getconf _NPROCESSORS_ONLN` deb-pkg LOCALVERSION=-reeps
 
 # move the build output to build after cleaning up old stuff
+cd ..
 rm -rf build
 mkdir build
 mv linux-* build/

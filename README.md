@@ -120,5 +120,5 @@ Enjoy!
 
 My current kernel:
 ```
-Linux REEPS-SP3 4.3.0-rc7-reeps #1 SMP Sat Oct 31 19:54:03 PDT 2015 x86_64 x86_64 x86_64 GNU/Linux
+Linux REEPS-SP3 4.3.0-rc7-reeps #1 SMP Sun Nov 1 09:50:08 PST 2015 x86_64 x86_64 x86_64 GNU/Linux
 ```
