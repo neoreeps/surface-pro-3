@@ -14,7 +14,7 @@ As I build new kernels, I'll place them in [Google Drive](https://drive.google.c
 # Ubuntu (15.10) - Kernel can be used on 15.04 also
 I have just switched to Ubuntu 15.10, and everything seems to be working well.  I am still using the 4.2 kernel below with the updated wily patch which gives us multi-touch support.
 
-## 4.3.0 RC7
+## 4.3.0 Kernel
 Everything seems to be working well. No complaints so far. 
 
 ## 4.2.0 Kernel
@@ -120,5 +120,5 @@ Enjoy!
 
 My current kernel:
 ```
-Linux REEPS-SP3 4.3.0-rc7-reeps #1 SMP Sun Nov 1 09:50:08 PST 2015 x86_64 x86_64 x86_64 GNU/Linux
+Linux REEPS-SP3 4.3.0-reeps #1 SMP Sun Nov 1 19:08:05 PST 2015 x86_64 x86_64 x86_64 GNU/Linux
 ```
