@@ -12,10 +12,10 @@ Most of this work is not my own, rather it is a collection of patches and instru
 As I build new kernels, I'll place them in [Google Drive](https://drive.google.com/open?id=0BzNI3Zdy9Y6kfklBazc5Y3VQXzd6MU1oaUFMS0NxWEI4dmpFRmFITWZFZWpfM0U1dUJJaTQ)
 
 # Ubuntu (15.10) - Kernel can be used on 15.04 also
-I have just switched to Ubuntu 15.10, and everything seems to be working well.  I am still using the 4.2 kernel below with the updated wily patch which gives us multi-touch support.
+I have just switched to Ubuntu 15.10, and everything seems to be working well.  I am using the 4.3 kernel below with the patches which gives us multi-touch support and ubuntu equivelant kernel.
 
 ## 4.3.0 Kernel
-Everything seems to be working well. No complaints so far. 
+Everything seems to be working well. No complaints so far, except power management.
 
 ## 4.2.0 Kernel
 
@@ -37,6 +37,21 @@ NOTE: I don't have an SP4 or Surface Book so I don't know what's functional
 Install all the deps:
 ```
 sudo apt-get install git build-essential kernel-package fakeroot libncurses5-dev libssl-dev ccache
+```
+
+## The easy way ...
+Just clone this repo and run the build_linux script:
+```
+USAGE: ./build_linux.sh [clone|pull] [debug|release]
+	Actions:
+			clone	- remove old build directory and clone fresh, applying all patches
+			pull	- keep existing build dir and pull changes only
+	Options:
+			debug	- create debug .deb also (>400MB)
+			release - create release build only
+
+	Example: (clone and build release)
+	./build_linux.sh clone release
 ```
 
 ## Get the kernel (mainline)
