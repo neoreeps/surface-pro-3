@@ -43,13 +43,15 @@ sudo apt-get install git build-essential kernel-package fakeroot libncurses5-dev
 Just clone this repo and run the build_linux script:
 ```
 USAGE: ./build_linux.sh [clone|pull] [debug|release]
-	Actions:
-			clone	- remove old build directory and clone fresh, applying all patches
-			pull	- keep existing build dir and pull changes only
+    Actions:
+        clone   - remove old build directory and clone fresh, applying all
+                  patches and staying at v4.3
+		pull    - keep existing build dir and pull changes only, and will 
+				  sync all changes from Torvalds current tree
 	Options:
-			debug	- create debug .deb also (>400MB)
-			release - create release build only
-
+		debug   - create debug .deb also (>400MB)
+		release - create release build only
+																		
 	Example: (clone and build release)
 	./build_linux.sh clone release
 ```

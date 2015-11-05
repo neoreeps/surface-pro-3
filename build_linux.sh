@@ -5,15 +5,17 @@ OPTION=$2
 
 USAGE="
 USAGE: ${0} [clone|pull] [debug|release]
-	Actions:
-		clone	- remove old build directory and clone fresh, applying all patches
-		pull	- keep existing build dir and pull changes only
-	Options:
-		debug	- create debug .deb also (>400MB)
-		release - create release build only
+    Actions:
+        clone	- remove old build directory and clone fresh, applying all
+                  patches and staying at v4.3
+        pull	- keep existing build dir and pull changes only, and will 
+                  sync all changes from Torvalds current tree
+    Options:
+        debug	- create debug .deb also (>400MB)
+        release - create release build only
 	
-	Example: (clone and build release)
-	${0} clone release"
+    Example: (clone and build release)
+    ${0} clone release"
 
 dprint() {
 	echo "---> ${@}" >&2
@@ -26,6 +28,9 @@ if [ "$ACTION" == "clone" ]; then
 
 	# clone from Linus git tree
 	git clone git://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git
+
+	# now, reset to v4.3, do a pull again to reset
+	git reset --hard 6a13feb9c82803e2b815eca72fa7a9f5561d7861
 
 	cd linux
 	# apply all the patches from dir
