@@ -42,7 +42,13 @@ elif [ "$ACTION" == "pull" ]; then
 
 	# git pull from Linux tree
 	cd linux
-	git pull
+	git pull |grep up-to-date
+
+	# if no changes, then we're done
+	if [ $? -eq 0 ]; then
+		dprint "Nothing to do."
+		exit 0
+	fi
 
 else
 	dprint "${USAGE}"
