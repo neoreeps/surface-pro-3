@@ -1,2 +1,3 @@
-linux/*
-debs/*
+linux*
+debs*
+build*

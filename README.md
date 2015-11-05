@@ -136,6 +136,7 @@ grub> boot
 Enjoy!
 
 My current kernel:
+Linux REEPS-SP3 4.3.0-reeps #1 SMP Wed Nov 4 19:08:00 PST 2015 x86_64 x86_64 x86_64 GNU/Linux
 ```
-Linux REEPS-SP3 4.3.0-reeps #1 SMP Wed Nov 4 09:48:15 PST 2015 x86_64 x86_64 x86_64 GNU/Linux
+
 ```
