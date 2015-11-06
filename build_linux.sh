@@ -21,6 +21,13 @@ dprint() {
 	echo "---> ${@}" >&2
 }
 
+# validate we have internet access for git
+ping 8.8.8.8 -c 1 2>&1 >/dev/null
+if [ $? -ne 0 ]; then
+	dprint "Internet access is required, please resolve and try again."
+	exit 1
+fi
+
 if [ "$ACTION" == "clone" ]; then
 
 	rm -rf linux.old
@@ -57,6 +64,9 @@ fi
 
 # make config file based off of running config
 yes '' | make oldconfig
+
+# disable LUSTRE
+sed -i 's/CONFIG_LUSTRE_FS=m/CONFIG_LUSTRE_FS=n/g' .config
 
 if [ "$ACTION" == "clone" ]; then
 	# update the .config for surface button in case this is the first time build
