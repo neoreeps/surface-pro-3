@@ -37,9 +37,9 @@ if [ "$ACTION" == "clone" ]; then
 	git clone git://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git
 
 	# now, reset to v4.3, do a pull again to reset
+	cd linux
 	git reset --hard 6a13feb9c82803e2b815eca72fa7a9f5561d7861
 
-	cd linux
 	# apply all the patches from dir
 	for i in $( ls ../patches ); do
 		patch -p1 --ignore-whitespace -i ../patches/$i
