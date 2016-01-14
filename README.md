@@ -8,6 +8,12 @@ I do not dual boot.  I used to about 15 years ago back in 2000ish but found I al
 
 Most of this work is not my own, rather it is a collection of patches and instructions to simplify running Linux on Surface Pro 3.
 
+## Install Caveats
+Some users have experienced issues with installing 15.10 directly on SP4. (Maybe other hardware as well?)  Instead, simply install 15.04 and then upgrade to 15.10 using do-release-upgrade:
+```
+sudo do-release-upgrade
+```
+
 ## Binary pre-built debs
 As I build new kernels, I'll place them in [Google Drive](https://drive.google.com/open?id=0BzNI3Zdy9Y6kfklBazc5Y3VQXzd6MU1oaUFMS0NxWEI4dmpFRmFITWZFZWpfM0U1dUJJaTQ)
 
