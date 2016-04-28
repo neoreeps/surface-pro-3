@@ -1,4 +1,6 @@
 # Surface Pro 3
+NOTICE: I haven't had any time to work on this and I no longer have any SPx or SB.  For current status and better support, please see reddit thread @ https://www.reddit.com/r/SurfaceLinux/
+
 This is a work in progress and will be obsolete at some point when all changes make it upstream.
 
 I have not disabled TPM or SecureBoot.  I have both enabled and have them enabled during install, reboot, etc.  No need any longer to disable them, if using Ubuntu 15.04 which has support for secure boot and key management.
